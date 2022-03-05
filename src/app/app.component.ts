@@ -13,7 +13,7 @@ export class AppComponent {
 
   constructor(public fb: FormBuilder){
     this.form = this.fb.group({
-      data: [''],
+      data: [new Date()],
       cliente: [''],
       contato: [''],
       servico: [''],
