@@ -1,0 +1,49 @@
+<div class="container-fluid bg-dark" *ngIf="!logado">
+  <div class="row h-100 d-flex justify-content-center align-items-center">
+    <div class="col-md-6 card">
+      <div class="text-center display-6 my-3">
+        Barbearia do Shaolin matador de Porco
+      </div>
+      <mat-form-field class="w-100" appearance="fill">
+        <mat-label> Digite a senha para acessar o sistema:</mat-label>
+        <input matInput type="password" placeholder="" value="" (keyup)="verificarSenha($event)">
+      </mat-form-field>
+    </div>
+  </div>
+  
+</div>
+
+
+<div class="container-fluid" *ngIf="logado">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-6">
+      <form [formGroup]="form">
+        <input type="text" formControlName="data">
+        
+        <div class="d-flex">
+          <mat-form-field class="flex-fill me-3" appearance="fill">
+            <mat-label> Nome:</mat-label>
+            <input matInput placeholder="Ex. Shaolin Matador de Porco" formControlName="cliente">
+          </mat-form-field>
+          <mat-form-field class="flex-fill" appearance="fill">
+            <mat-label> Contato:</mat-label>
+            <input matInput placeholder="Ex. (15) 99703-1775" formControlName="contato">
+          </mat-form-field>
+        </div>
+
+        <div class="text-center">
+          <label for="label-servico" class="me-3">Serviço: </label>
+          <mat-radio-group>
+            <mat-radio-button value="0" class="me-3">Cabelo</mat-radio-button>
+            <mat-radio-button value="1" class="me-3">Barba</mat-radio-button>
+            <mat-radio-button value="2">Combo</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div>
+          <button mat-raised-button color="accent" class="w-100 mt-3">Cadastrar cliente na fila</button>
+        </div>
+        
+      </form>
+    </div>
+  </div>
+</div>
