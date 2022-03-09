@@ -10,16 +10,16 @@
       </mat-form-field>
     </div>
   </div>
-  
+
 </div>
 
 
 <div class="container-fluid" *ngIf="logado">
   <div class="row d-flex justify-content-center">
     <div class="col-md-6">
-      <form [formGroup]="form">
-        <input type="text" formControlName="data">
-        
+      <form [formGroup]="form" (ngSubmit)="enviarDados()">
+        <input type="hidden" formControlName="data">
+
         <div class="d-flex">
           <mat-form-field class="flex-fill me-3" appearance="fill">
             <mat-label> Nome:</mat-label>
@@ -42,7 +42,7 @@
         <div>
           <button mat-raised-button color="accent" class="w-100 mt-3">Cadastrar cliente na fila</button>
         </div>
-        
+
       </form>
     </div>
   </div>
